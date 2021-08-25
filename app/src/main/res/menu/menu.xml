@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuSetting"
+        android:icon="@drawable/abc_vector_test"
+        android:title="Setting" />
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/abc_vector_test"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/file"
+        android:title="MenuFile">
+
+
+
+
+        <menu>
+            <item
+                android:id="@+id/menu_file_create"
+                android:title="new" />
+            <item
+                android:id="@+id/menu_file_open"
+                android:title="Open" />
+        </menu>
+    </item>
+
+
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="search"
+        app:showAsAction="ifRoom|withText"
+        app:actionViewClass="android.widget.SearchView" />
+
+
+</menu>
