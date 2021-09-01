@@ -40,8 +40,8 @@ class StartFragment : Fragment() {
         super.onStart()
 
         this.view?.findViewById<Button>(R.id.button)?.setOnClickListener {
-            val action = StartFragmentDirections.actionStartFragmentToFinishFragment("title Academy",null)
-            findNavController().navigate(action)
+           // val action = StartFragmentDirections.actionStartFragmentToFinishFragment("title Academy",null)
+           // findNavController().navigate(action)
         }
     }
 

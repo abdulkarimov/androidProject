@@ -13,7 +13,7 @@ import com.example.abdulla.databinding.FragmentFinishBinding
 
 class finishFragment : Fragment() {
 
-    val args: finishFragmentArgs by navArgs()
+   // val args: finishFragmentArgs by navArgs()
     private lateinit var binding : FragmentFinishBinding
 
 
@@ -30,8 +30,8 @@ class finishFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        binding.title.text = args.title
-        binding.subtitle.text =args.subtitle?: "default subtitle"
+       // binding.title.text = args.title
+        //binding.subtitle.text =args.subtitle?: "default subtitle"
 
     }
 

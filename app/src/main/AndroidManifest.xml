@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
         <activity
+            android:name=".session7.PostActivity"
+            android:exported="true" />
+        <activity
             android:name=".session7.RxActivity"
             android:exported="true" />
         <activity

@@ -22,6 +22,18 @@ class MainActivity : AppCompatActivity() {
             //val intent = Intent(this,RecycelerViewActivity::class.java)
 
             startActivity(intent)
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 

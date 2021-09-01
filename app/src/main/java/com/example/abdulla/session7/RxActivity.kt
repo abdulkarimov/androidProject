@@ -8,6 +8,7 @@ import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.abdulla.R
+import com.example.abdulla.RecyclerAdapter
 import com.example.abdulla.session7.model.User
 import com.example.abdulla.session7.model.Users
 import com.example.abdulla.session7.retrofit.RetrofitClient
@@ -15,12 +16,14 @@ import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
 import kotlin.collections.ArrayList
 
 class RxActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var progressBar : ProgressBar
-    private var adapter: RecuclerAdapte = RecuclerAdapte()
+    private var adapter = RecuclerAdapte()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rx)
@@ -29,13 +32,30 @@ class RxActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.create_user_buttom).setOnClickListener()
         {
-            recyclerView.layoutManager = LinearLayoutManager(this)
-            recyclerView.adapter = adapter
-            fetchUsers()
+
+            //fetchUsers()
+
+
+
 
         }
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
+
+        val userString = intent.getStringExtra(USER)
+        val user = Json.decodeFromString<User>(userString
+            ?: throw Exception("no user found")
+        )
+        println(userString)
+        adapter.setData(arrayListOf(user))
 
     }
+
+    companion object{
+            const val USER = "user"
+
+    }
+
     private fun fetchUsers(){
         progressBar.visibility = View.VISIBLE
         RetrofitClient.getusers()
@@ -43,7 +63,6 @@ class RxActivity : AppCompatActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : Observer<Users>{
                 override fun onSubscribe(d: Disposable) {
-                    TODO("Not yet implemented")
                 }
 
                 override fun onNext(t: Users) {

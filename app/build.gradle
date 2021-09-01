@@ -1,7 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-android-extensions'
+    id 'kotlinx-serialization'
 }
 
 android {
@@ -55,6 +56,10 @@ dependencies {
     // Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //SERIALIZATION
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:0.9.1"
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2'
 
     // Feature module Support
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"

@@ -14,7 +14,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    private val service = Retrofit.Builder().baseUrl("https://gorest.co.in")
+    private val service = Retrofit.Builder()
+        .baseUrl("https://gorest.co.in")
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .client(httpClient)

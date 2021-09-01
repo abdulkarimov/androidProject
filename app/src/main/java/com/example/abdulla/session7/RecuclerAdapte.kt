@@ -3,7 +3,6 @@ package com.example.abdulla.session7
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.abdulla.RecyclerAdapter
 import com.example.abdulla.databinding.ActivityUserRecyclerBinding
 import com.example.abdulla.session7.model.User
 
@@ -43,7 +42,7 @@ class RecuclerAdapte : RecyclerView.Adapter<RecuclerAdapte.UserViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+       return data.size
     }
 
 }
